@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
 	float minSpawnRate, maxSpawnRate;
 	#endregion
 
+	//I do like a solid pie
+
 	void Start () {
 		minSpawnRate = 0.8f;
 		maxSpawnRate = 1.6f;
