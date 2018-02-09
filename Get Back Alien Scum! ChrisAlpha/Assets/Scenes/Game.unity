@@ -298,6 +298,8 @@ MonoBehaviour:
   - {fileID: 1730425822875912, guid: 2d57b10f2b3d7e84ab77af684cf78e60, type: 2}
   - {fileID: 1702838750691324, guid: c04e2504860f6954194fdf2ebc268fa8, type: 2}
   - {fileID: 1290593645863980, guid: 6a94959eda227b4499b58155b91a2f7b, type: 2}
+  myScore: 0
+  myHealth: 0
 --- !u!4 &2095516600
 Transform:
   m_ObjectHideFlags: 0

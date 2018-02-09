@@ -5,9 +5,9 @@ using UnityEngine.UI; //allows access to UI elemenmts
 
 public class ScoreBoardController : MonoBehaviour {
 
-	public Text[] highScores; //Arracy for high score text fields
-	int[] highScoreValues; //Arracy for high score values
-	string[] highScoreNames; //Arracy for high score player Names
+	public Text[] highScores; //Array for high score text fields
+	int[] highScoreValues; //Array for high score values
+	string[] highScoreNames; //Array for high score player Names
 
 	void Start () { // Use this for initialization
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
