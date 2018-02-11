@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour {
 	public int myHealth;
 	#endregion
 
+	public GameObject scoreBoard, nameInputBox, submitButton, quitToMenuButton; //UI objects that can be enabled or disabled as required
+	public InputField playerName; //Player name input on scorebaord
+
 	void Start () {
 		minSpawnRate = 1.2f;
 		maxSpawnRate = 1.8f;
@@ -43,4 +46,18 @@ public class GameController : MonoBehaviour {
 		//Debug.Log (minSpawnRate + " rate increased!");
 		//Debug.Log (maxSpawnRate + " rate increased!");
 	}
+
+
+	public void GameOver(){ //function for GameOver
+		Time.timeScale = 0f; //Sets time scale to 0 (paused)
+		scoreBoard.SetActive (true); //Enables the scoreboard game object
+	}
+
+	public void Scoreboard(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard.
+		GetComponent<ScoreBoardController> ().CheckForHighScore (myScore, playerName.text); //calls CheckForHighScore function from ScoreboardController script
+		nameInputBox.SetActive (false); //Disables name input box
+		submitButton.SetActive (false); //Disables submit button
+		quitToMenuButton.SetActive (true); //enables the Quit to main menu button
+	}
+
 }

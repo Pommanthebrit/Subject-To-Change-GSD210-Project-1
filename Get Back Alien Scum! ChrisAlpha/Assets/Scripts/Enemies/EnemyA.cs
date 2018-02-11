@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//script written by Chris & Aston Olsen
+
 public class EnemyA : MonoBehaviour {
 
 	GameController myGameController;
