@@ -79,6 +79,70 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 3}
+  - {fileID: 7}
+  - {fileID: 2}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 508
+    height: 1307
+  m_MinSize: {x: 232, y: 613}
+  m_MaxSize: {x: 10002, y: 18063}
+  vertical: 1
+<<<<<<< HEAD
+  controlID: 61
+=======
+  controlID: 117
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 11}
+  - {fileID: 6}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 2560
+    height: 1307
+  m_MinSize: {x: 713, y: 613}
+  m_MaxSize: {x: 18008, y: 18063}
+  vertical: 0
+<<<<<<< HEAD
+  controlID: 9
+=======
+<<<<<<< HEAD
+  controlID: 102
+=======
+  controlID: 9
+>>>>>>> 4370ca1a1f97ffe075596d27793a2749ec1a874b
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -327,13 +391,25 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
+    - Assets/Scenes
+=======
     - Assets/Custom Assets/Pixelart
+<<<<<<< HEAD
   m_ViewMode: 1
+=======
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+  m_ViewMode: 0
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Custom Assets/Pixelart
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
+  m_LastProjectPath: C:\Users\aolsen\Documents\GitHub\Subject-To-Change-GSD210-Project-1\Get
+=======
   m_LastProjectPath: C:\Users\kruneckles\Documents\GitHub\Subject-To-Change-GSD210-Project-1\Get
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
     Back Alien Scum! ChrisAlpha
   m_IsLocked: 0
   m_FolderTreeState:
@@ -368,18 +444,46 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003429000042290000462900006629000070290000b6290000c8290000d62900004c2b0000b82b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
       m_OriginalName: 
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000a0290000aa290000ae290000c8290000d22900000e2a00001a2a0000282a00008a2b0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: Game
+      m_OriginalName: Game
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000a0290000aa290000ae290000c8290000d22900000e2a00001a2a0000282a00008a2b0000002c0000
+=======
+    m_ExpandedIDs: 00000000342900003e290000422900005c29000066290000ae290000bc290000322b0000
+>>>>>>> 4370ca1a1f97ffe075596d27793a2749ec1a874b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: Square
+      m_OriginalName: Square
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 0
+=======
+<<<<<<< HEAD
+      m_UserData: 10742
+=======
+      m_UserData: 11274
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 11
@@ -488,7 +592,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 9efbffff00000000
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 7ab3ffffe4b5ffff6cb7ffffaad3ffffeee5ffff5cfbffff00000000042d0000522d0000143500003235000054350000
+=======
+    m_ExpandedIDs: 5cfbffff00000000
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -539,14 +651,36 @@ MonoBehaviour:
     height: 769
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
+<<<<<<< HEAD
   lastFramingTime: 0
+=======
+  lastFramingTime: 797.4272900887124
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+<<<<<<< HEAD
+    m_Target: {x: 0.05483719, y: -0.5960873, z: 0.10546875}
+    speed: 2
+    m_Value: {x: 0.05483719, y: -0.5960873, z: 0.10546875}
+=======
+<<<<<<< HEAD
+    m_Target: {x: 4.563815, y: -3.757111, z: -0.121509105}
+    speed: 2
+    m_Value: {x: 4.563815, y: -3.757111, z: -0.121509105}
+=======
+    m_Target: {x: -0.50657934, y: -1.1430058, z: -0.12890625}
+    speed: 2
+    m_Value: {x: -0.50657934, y: -1.1430058, z: -0.12890625}
+>>>>>>> 4370ca1a1f97ffe075596d27793a2749ec1a874b
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -574,9 +708,27 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+<<<<<<< HEAD
+    m_Target: 11.547019
+    speed: 2
+    m_Value: 11.547019
+=======
+<<<<<<< HEAD
+    m_Target: 15.273193
+    speed: 2
+    m_Value: 15.273193
+=======
+    m_Target: 15.985467
+    speed: 2
+    m_Value: 15.985467
+>>>>>>> 4370ca1a1f97ffe075596d27793a2749ec1a874b
+>>>>>>> ebf7958b1207037eced78a2295e9c5ec62cce76c
+>>>>>>> e640586c1f4236c2ae0de7e59ba366ab26b0e734
   m_Ortho:
     m_Target: 1
     speed: 2
