@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour {
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
 
-	public void Scoreboard(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboard.
+	public void Scoreboard(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboar (after the player has entered their name)
 		GetComponent<ScoreBoardController> ().CheckForHighScore (myScore, playerName.text); //calls CheckForHighScore function from ScoreboardController script
 		nameInputBox.SetActive (false); //Disables name input box
 		submitButton.SetActive (false); //Disables submit button
