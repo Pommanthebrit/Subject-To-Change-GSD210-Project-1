@@ -2224,7 +2224,7 @@ MonoBehaviour:
   - {fileID: 1702838750691324, guid: c04e2504860f6954194fdf2ebc268fa8, type: 2}
   - {fileID: 1290593645863980, guid: 6a94959eda227b4499b58155b91a2f7b, type: 2}
   myScore: 0
-  myHealth: 0
+  myHealth: 3
   scoreBoard: {fileID: 1788217122}
   nameInputBox: {fileID: 1358951347}
   submitButton: {fileID: 1309657607}

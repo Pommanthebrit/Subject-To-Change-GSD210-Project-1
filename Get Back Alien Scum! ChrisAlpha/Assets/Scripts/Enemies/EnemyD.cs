@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyK : MonoBehaviour {
+public class EnemyD : MonoBehaviour {
 
 	GameController myGameController;
 	GameObject player;
