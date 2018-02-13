@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95842489873367886}
   - component: {fileID: 70937148968795434}
   - component: {fileID: 50612315596600248}
+  - component: {fileID: 114270187523095902}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -87,7 +88,7 @@ Animator:
   m_GameObject: {fileID: 1621881425412518}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e5f5007bb98c264dba2bb6c985bc735, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f3fd15c251a31f498c57c2f98339f99, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -95,6 +96,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114270187523095902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621881425412518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2592aaa062f7d4bb28906bf9ac26d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212015941300006930
 SpriteRenderer:
   m_ObjectHideFlags: 1
