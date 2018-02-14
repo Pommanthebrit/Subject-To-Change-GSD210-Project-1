@@ -4,17 +4,22 @@ using UnityEngine.EventSystems;
 
 public class Shoot : MonoBehaviour {
 
+	Animator myAnimator;
 	public GameObject myProjectile, LeftBarrel, RightBarrel;
 	public float bulletSpeed;
 
+	void Start () {
+		myAnimator = GetComponent<Animator> ();
+	}
 
+	void Update () {
 
-		void Update () {
-
-//			if (Input.GetTouch (0).phase == TouchPhase.Began) {
+//		if (Input.GetTouch (0).phase == TouchPhase.Began) {
 		if (Input.GetButtonDown ("Fire1")) {
-//				Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-//				Vector2 dir = touchPos - (new Vector2(transform.position.x, transform.position.y));
+//			Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+//			Vector2 dir = touchPos - (new Vector2(transform.position.x, transform.position.y));
+
+			myAnimator.SetTrigger ("Shoot");
 
 			Vector3 worldMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);	
 			transform.rotation = Quaternion.LookRotation (Vector3.forward, worldMousePos - transform.position);

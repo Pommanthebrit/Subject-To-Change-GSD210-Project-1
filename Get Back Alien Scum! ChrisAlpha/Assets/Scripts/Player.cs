@@ -19,16 +19,15 @@ public class Player : MonoBehaviour {
 		Debug.Log ("Player hit by " + collider.gameObject.name);
 
 		if (collider.gameObject.tag == "Enemy") {
+
+			StartCoroutine(DamageBlink());
+
 			myGameController.myHealth += -1;
 			Debug.Log ("Player health " + myGameController.myHealth);
 			Destroy (collider.gameObject);
 			Debug.Log ("Score " + myGameController.myScore);
 		}
 	}
-		void Damage() {
-			StartCoroutine(DamageBlink()); //calls coroutine DamageBlink
-			//other damage code here
-		}
 
 		IEnumerator DamageBlink() { //coroutine for making the player ship flash when taking damage
 			GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0); //changes ship colour to red
