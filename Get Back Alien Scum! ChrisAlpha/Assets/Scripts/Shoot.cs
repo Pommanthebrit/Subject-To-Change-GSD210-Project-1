@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 
 public class Shoot : MonoBehaviour {
 
-	public GameObject projectile, LeftBarrel, RightBarrel;
+	public GameObject myProjectile, LeftBarrel, RightBarrel;
 	public float bulletSpeed;
 
-	void Update () {
+		void Update () {
 
 //			if (Input.GetTouch (0).phase == TouchPhase.Began) {
 			if (Input.GetButtonDown("Fire1")) {
@@ -17,8 +17,8 @@ public class Shoot : MonoBehaviour {
 				transform.rotation = Quaternion.LookRotation(Vector3.forward, worldMousePos- transform.position);
 				Vector2 dir = (Vector2)((worldMousePos - transform.position));
 				dir.Normalize ();
-				GameObject bullet = Instantiate (projectile, LeftBarrel.transform.position, Quaternion.identity)as GameObject;
-				GameObject bullet2 = Instantiate (projectile, RightBarrel.transform.position, Quaternion.identity)as GameObject;
+				GameObject bullet = Instantiate (myProjectile, LeftBarrel.transform.position, Quaternion.identity)as GameObject;
+				GameObject bullet2 = Instantiate (myProjectile, RightBarrel.transform.position, Quaternion.identity)as GameObject;
 				bullet.GetComponent<Rigidbody2D> ().velocity = dir * bulletSpeed; 
 				bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward, worldMousePos- transform.position);
 				bullet2.GetComponent<Rigidbody2D> ().velocity = dir * bulletSpeed; 
