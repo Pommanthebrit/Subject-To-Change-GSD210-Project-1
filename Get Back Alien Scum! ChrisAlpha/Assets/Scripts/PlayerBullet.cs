@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
-	
+
+	GameController myGameController;
+
+	void Start () {
+		myGameController = FindObjectOfType<GameController> ();
+	}
+
 	void Update () {
 		//Destroy enemy if goes out of camera bounds (at bottom and left of screen)
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
@@ -16,5 +22,9 @@ public class PlayerBullet : MonoBehaviour {
 		if(transform.position.y > maxMoveLimit.y || transform.position.x > maxMoveLimit.x) {
 			Destroy (gameObject);
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collider) {
+		Destroy (gameObject);
 	}
 }

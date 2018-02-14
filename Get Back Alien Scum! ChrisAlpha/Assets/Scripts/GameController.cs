@@ -22,10 +22,10 @@ public class GameController : MonoBehaviour {
 
 	void Start () {
 		//Runs a repeating function to spawn enemies at whatever the spawn rate currently is
-		minSpawnRate = 1.2f;
-		maxSpawnRate = 1.8f;
-		InvokeRepeating ("SpawnEnemy", 6f, Random.Range(minSpawnRate, maxSpawnRate));
-		InvokeRepeating ("IncreaseSpawn", 20f, 12f);
+		minSpawnRate = 0.6f;
+		maxSpawnRate = 1f;
+		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
+		InvokeRepeating ("IncreaseSpawn", 20f, 15f);
 	}
 	
 	void Update () {
