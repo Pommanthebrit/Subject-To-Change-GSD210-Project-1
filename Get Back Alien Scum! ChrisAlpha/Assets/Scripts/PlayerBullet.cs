@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
-
-	void Start () {
-		
-	}
 	
 	void Update () {
 		//Destroy enemy if goes out of camera bounds (at bottom and left of screen)

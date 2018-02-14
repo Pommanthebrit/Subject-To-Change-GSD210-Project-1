@@ -24,7 +24,6 @@ public class EnemyA : MonoBehaviour {
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 		if(transform.position.y < minMoveLimit.y) {
 
-			myGameController.myScore += -10;
 			myGameController.myHealth += -1;
 
 			Debug.Log ("Score: " + myGameController.myScore);
