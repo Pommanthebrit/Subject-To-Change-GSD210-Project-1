@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4993559346000394}
   - component: {fileID: 212520006191679818}
   - component: {fileID: 95409208482052312}
+  - component: {fileID: 114291236770076008}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -58,6 +59,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114291236770076008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1702838750691324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80c77453b34a3146882495ac2467ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1873465431942944, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
+  - {fileID: 1048599289944322, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}
+  - {fileID: 1631569796785188, guid: 216f375cb2f5dd64089990781f093792, type: 2}
+  - {fileID: 1169330555097932, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
+  - {fileID: 1462038041542036, guid: 861a1e6e52c8b79408901f39bae894a6, type: 2}
+  num: 0
+  demonstration: 0
+  minDist: 0.1
+  speed: 3
+  rand: 1
+  go: 1
 --- !u!212 &212520006191679818
 SpriteRenderer:
   m_ObjectHideFlags: 1
