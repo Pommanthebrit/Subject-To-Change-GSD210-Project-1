@@ -82,7 +82,7 @@ public class EnemyK : MonoBehaviour {
 
 		//Change made here
 		Vector3 vectorToTarget = waypoints[num].transform.position - this.transform.position;
-		print(vectorToTarget);
+		//print(vectorToTarget);
 		float angleToTargetDeg = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angleToTargetDeg, Vector3.forward);
 

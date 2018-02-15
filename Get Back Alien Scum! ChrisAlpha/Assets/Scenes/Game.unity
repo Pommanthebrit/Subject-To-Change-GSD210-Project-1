@@ -152,6 +152,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 212393094448861640, guid: b7997d69c9d098e46b0a9c99c0bbb8d5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691741796780372, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691741796780372, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691741796780372, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}
   m_IsPrefabParent: 0
@@ -471,6 +488,23 @@ Prefab:
     - target: {fileID: 4214609800271970, guid: 216f375cb2f5dd64089990781f093792, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212788613777740828, guid: 216f375cb2f5dd64089990781f093792,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214609800271970, guid: 216f375cb2f5dd64089990781f093792, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214609800271970, guid: 216f375cb2f5dd64089990781f093792, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214609800271970, guid: 216f375cb2f5dd64089990781f093792, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 216f375cb2f5dd64089990781f093792, type: 2}
@@ -1021,6 +1055,23 @@ Prefab:
     - target: {fileID: 4203669628721426, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 212556917036768610, guid: 70ada9842d78488468ab437a5334d4e1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203669628721426, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203669628721426, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203669628721426, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
@@ -2027,6 +2078,23 @@ Prefab:
     - target: {fileID: 4487001538587632, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212222452869693436, guid: 7c9bb1c1dbbe7a04991debda51a8810b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487001538587632, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487001538587632, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487001538587632, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c9bb1c1dbbe7a04991debda51a8810b, type: 2}
