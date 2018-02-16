@@ -21,17 +21,28 @@ public class GameController : MonoBehaviour {
 	#endregion
 
 	void Start () {
+		//Ensures all menus and timescale are reset for game start
+		Time.timeScale = 1f;
+		scoreBoard.SetActive (false);
+		nameInputBox.SetActive (false);
+		submitButton.SetActive (false);
+
 		//Runs a repeating function to spawn enemies at whatever the spawn rate currently is
-		minSpawnRate = 0.6f;
-		maxSpawnRate = 1f;
+		minSpawnRate = 1f;
+		maxSpawnRate = 1.8f;
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
-		InvokeRepeating ("IncreaseSpawn", 20f, 15f);
+		InvokeRepeating ("IncreaseSpawn", 20f, 12f);
 	}
 	
 	void Update () {
 		//Prevents spawnrate from becoming too fast to keep up with
 		minSpawnRate = Mathf.Clamp (minSpawnRate, 0.4f, 1f);
-		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 1f, 2f);
+		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 0.8f, 1.8f);
+
+		//Game end
+		if (myHealth <= 0) {
+			GameOver ();
+		}
 	}
 
 	void SpawnEnemy () {
@@ -46,14 +57,14 @@ public class GameController : MonoBehaviour {
 
 	void IncreaseSpawn () {
 		//Spawnrate becomes progressively faster in small increments
-		minSpawnRate = minSpawnRate - 0.05f;
-		maxSpawnRate = maxSpawnRate - 0.05f;
+		minSpawnRate = minSpawnRate - 0.04f;
+		maxSpawnRate = maxSpawnRate - 0.04f;
 		//Debug.Log (minSpawnRate + " rate increased!");
 		//Debug.Log (maxSpawnRate + " rate increased!");
 	}
 
 	public void GameOver() {
-		Time.timeScale = 0f; //Sets time scale to 0 (paused)
+		Time.timeScale -= Time.deltaTime; //Slow time gradually
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
 
@@ -64,4 +75,7 @@ public class GameController : MonoBehaviour {
 		quitToMenuButton.SetActive (true); //Enables the Quit to main menu button
 	}
 
+	public void Pause () {
+
+	}
 }

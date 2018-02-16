@@ -23,18 +23,35 @@ public class EnemyK : MonoBehaviour {
 	public bool go = true ;
 
 	void Start () {
+		myGameController = FindObjectOfType <GameController> ();
+
 		mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
 		player = GameObject.Find ("Player"); //Locate player position
 	}
 
 	void Update () {
 		if (player != null) {
-
+			float dist = Vector3.Distance (gameObject.transform.position, waypoints [num].transform.position);
+			if (go) {
+				if (dist > minDist) {
+					Move ();
+				} else {
+					if (!rand) {
+						if (num + 1 == waypoints.Length) {
+							num = 0;
+						} else {
+							num++;
+						}
+					} else {
+						num = Random.Range (0, waypoints.Length);
+					}
+				}
+			}
 		}
 
 		//Destroy enemy if goes out of camera bounds (at bottom of screen)
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-		if(transform.position.y < minMoveLimit.y) {
+		if (transform.position.y < minMoveLimit.y) {
 
 			myGameController.myHealth += -1;
 
@@ -43,27 +60,7 @@ public class EnemyK : MonoBehaviour {
 
 			Destroy (gameObject);
 		}
-
-
-
-		float dist = Vector3.Distance (gameObject.transform.position, waypoints [num].transform.position);
-		if (go) {
-			if (dist > minDist) {
-				Move();
-			} else {
-				if (!rand) {
-					if (num + 1 == waypoints.Length) {
-						num = 0;
-					} else {
-						num++;
-					}
-				} else {
-					num = Random.Range (0, waypoints.Length);
-				}
-			}
-		}
 	}
-
 
 	//Destroys enemy if shot by player bullet, increases score
 	void OnCollisionEnter2D(Collision2D collider) {
