@@ -6,7 +6,6 @@ public class EnemyK : MonoBehaviour {
 
 	GameController myGameController; //Speak to GC to increases score
 	GameObject player; //Locate player position
-	float mySpeed;
 	bool scoreGiven = false;
 
 	// Can be "[SerializeField] Transform[] waypoints;" if you did simply put ("waypoints[num].position" instead of "waypoints[num].transform.position")
@@ -14,7 +13,7 @@ public class EnemyK : MonoBehaviour {
 
 	public int num = 0;
 
-	// Private float availible in the editor
+	//Private float available in the editor
 	[SerializeField] float demonstration;
 
 	public float minDist;
@@ -25,7 +24,6 @@ public class EnemyK : MonoBehaviour {
 	void Start () {
 		myGameController = FindObjectOfType <GameController> ();
 
-		mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
 		player = GameObject.Find ("Player"); //Locate player position
 	}
 
@@ -48,18 +46,6 @@ public class EnemyK : MonoBehaviour {
 				}
 			}
 		}
-
-		//Destroy enemy if goes out of camera bounds (at bottom of screen)
-		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-		if (transform.position.y < minMoveLimit.y) {
-
-			myGameController.myHealth += -1;
-
-			Debug.Log ("Score: " + myGameController.myScore);
-			Debug.Log ("Player health: " + myGameController.myHealth);
-
-			Destroy (gameObject);
-		}
 	}
 
 	//Destroys enemy if shot by player bullet, increases score
@@ -76,7 +62,6 @@ public class EnemyK : MonoBehaviour {
 	}
 
 	public void Move(){
-
 		//Change made here
 		Vector3 vectorToTarget = waypoints[num].transform.position - this.transform.position;
 		//print(vectorToTarget);

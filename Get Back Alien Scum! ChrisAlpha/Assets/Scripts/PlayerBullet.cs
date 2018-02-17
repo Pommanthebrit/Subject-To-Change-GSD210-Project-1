@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
 
-	GameController myGameController;
-
-	void Start () {
-		myGameController = FindObjectOfType<GameController> ();
-	}
-
 	void Update () {
 		//Destroy enemy if goes out of camera bounds (at bottom and left of screen)
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
