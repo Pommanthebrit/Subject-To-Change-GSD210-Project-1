@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
 
+	public GameObject bulletDeath;
+
 	void Update () {
 		//Destroy enemy if goes out of camera bounds (at bottom and left of screen)
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
@@ -19,6 +21,7 @@ public class PlayerBullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collider) {
+		//Instantiate (bulletDeath, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy (gameObject);
 	}
 }

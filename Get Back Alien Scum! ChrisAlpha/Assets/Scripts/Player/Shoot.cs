@@ -5,11 +5,15 @@ using UnityEngine.EventSystems;
 public class Shoot : MonoBehaviour {
 
 	Animator myAnimator;
+	AudioSource myAudioSource;
+	public AudioClip[] shoot;
+
 	public GameObject myProjectile, LeftBarrel, RightBarrel;
 	public float bulletSpeed;
 
 	void Start () {
 		myAnimator = GetComponent<Animator> ();
+		myAudioSource = GetComponent<AudioSource> ();
 	}
 
 	void Update () {
@@ -20,6 +24,7 @@ public class Shoot : MonoBehaviour {
 //			Vector2 dir = touchPos - (new Vector2(transform.position.x, transform.position.y));
 
 			myAnimator.SetTrigger ("Shoot");
+			myAudioSource.PlayOneShot (shoot[Random.Range (0, shoot.Length)]);
 
 			Vector3 worldMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);	
 			transform.rotation = Quaternion.LookRotation (Vector3.forward, worldMousePos - transform.position);
