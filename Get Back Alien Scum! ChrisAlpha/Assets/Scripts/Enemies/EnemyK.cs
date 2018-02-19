@@ -8,7 +8,7 @@ public class EnemyK : MonoBehaviour {
 	GameObject player; //Locate player position
 	bool scoreGiven = false;
 
-	// Can be "[SerializeField] Transform[] waypoints;" if you did simply put ("waypoints[num].position" instead of "waypoints[num].transform.position")
+	// Can be "[SerializeField] Transform[] waypoints;" if you put ("waypoints[num].position" instead of "waypoints[num].transform.position")
 	public GameObject [] waypoints;
 
 	public int num = 0;
@@ -48,18 +48,20 @@ public class EnemyK : MonoBehaviour {
 		}
 	}
 
-	//Destroys enemy if shot by player bullet, increases score
-	void OnCollisionEnter2D(Collision2D collider) {
-		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
-		if (scoreGiven == false) {
-			if (collider.gameObject.tag == "Bullet") {
-				myGameController.myScore += 10;
-				Debug.Log ("Score " + myGameController.myScore);
-				Destroy (gameObject);
-			}
-			scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
-		}
-	}
+//EDIT
+//	//Destroys enemy if shot by player bullet, increases score
+//	void OnCollisionEnter2D(Collision2D collider) {
+//		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
+//		if (scoreGiven == false) {
+//			if (collider.gameObject.tag == "Bullet") {
+//				myGameController.myScore += 10;
+//				Debug.Log ("Score " + myGameController.myScore);
+//				Destroy (gameObject);
+//			}
+//			scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
+//		}
+//	}
+//END OF EDIT
 
 	public void Move(){
 		//Change made here

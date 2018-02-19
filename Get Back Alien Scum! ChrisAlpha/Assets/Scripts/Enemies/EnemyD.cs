@@ -32,16 +32,18 @@ public class EnemyD : MonoBehaviour {
 		}
 	}
 
-	//Destroys enemy if shot by player bullet, increases score
-	void OnCollisionEnter2D(Collision2D collider) {
-		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
-		if (scoreGiven == false) {
-			if (collider.gameObject.tag == "Bullet") {
-				myGameController.myScore += 10;
-				Debug.Log ("Score " + myGameController.myScore);
-				Destroy (gameObject);
-			}
-			scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
-		}
-	}
+	//EDIT
+	//	//Destroys enemy if shot by player bullet, increases score
+	//	void OnCollisionEnter2D(Collision2D collider) {
+	//		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
+	//		if (scoreGiven == false) {
+	//			if (collider.gameObject.tag == "Bullet") {
+	//				myGameController.myScore += 10;
+	//				Debug.Log ("Score " + myGameController.myScore);
+	//				Destroy (gameObject);
+	//			}
+	//			scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
+	//		}
+	//	}
+	//END OF EDIT
 }
