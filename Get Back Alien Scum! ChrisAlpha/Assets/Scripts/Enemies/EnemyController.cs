@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class EnemyController : MonoBehaviour {
 
 	[Header("References")]
@@ -16,7 +15,6 @@ public class EnemyController : MonoBehaviour {
 	[SerializeField] protected float _health;
 
 	[Header("Enemy Sounds")]
-	[SerializeField] private AudioClip _hurtSound;
 	[SerializeField] private AudioClip _deathSound;
 
 	[Header("Other Enemy Effects")]
@@ -63,10 +61,6 @@ public class EnemyController : MonoBehaviour {
 		{
 			Die();
 		}
-		else
-		{
-			PlaySound(_hurtSound);
-		}
 	}
 
 	// Assign score to player and instantiate death effect
@@ -85,7 +79,7 @@ public class EnemyController : MonoBehaviour {
 	// Plays a specified sound
 	void PlaySound(AudioClip clip)
 	{
-		if(clip != null)
+		if(clip != null && _myAudioSource != null)
 		{
 			_myAudioSource.Stop();
 			_myAudioSource.clip = clip;
