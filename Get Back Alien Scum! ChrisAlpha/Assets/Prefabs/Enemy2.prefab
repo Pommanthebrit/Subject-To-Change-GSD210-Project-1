@@ -86,6 +86,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80c77453b34a3146882495ac2467ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _gc: {fileID: 0}
+  _scoreWorth: 10
+  _health: 2
   waypoints:
   - {fileID: 1873465431942944, guid: 70ada9842d78488468ab437a5334d4e1, type: 2}
   - {fileID: 1048599289944322, guid: b7997d69c9d098e46b0a9c99c0bbb8d5, type: 2}

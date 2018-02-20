@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyK : MonoBehaviour {
-
-	GameController myGameController; //Speak to GC to increases score
-	GameObject player; //Locate player position
-	bool scoreGiven = false;
+public class EnemyK : EnemyController {
 
 	// Can be "[SerializeField] Transform[] waypoints;" if you put ("waypoints[num].position" instead of "waypoints[num].transform.position")
 	public GameObject [] waypoints;
@@ -21,14 +17,8 @@ public class EnemyK : MonoBehaviour {
 	public bool rand = false ;
 	public bool go = true ;
 
-	void Start () {
-		myGameController = FindObjectOfType <GameController> ();
-
-		player = GameObject.Find ("Player"); //Locate player position
-	}
-
 	void Update () {
-		if (player != null) {
+		if (_player != null) {
 			float dist = Vector3.Distance (gameObject.transform.position, waypoints [num].transform.position);
 			if (go) {
 				if (dist > minDist) {
@@ -47,21 +37,6 @@ public class EnemyK : MonoBehaviour {
 			}
 		}
 	}
-
-//EDIT
-//	//Destroys enemy if shot by player bullet, increases score
-//	void OnCollisionEnter2D(Collision2D collider) {
-//		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
-//		if (scoreGiven == false) {
-//			if (collider.gameObject.tag == "Bullet") {
-//				myGameController.myScore += 10;
-//				Debug.Log ("Score " + myGameController.myScore);
-//				Destroy (gameObject);
-//			}
-//			scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
-//		}
-//	}
-//END OF EDIT
 
 	public void Move(){
 		//Change made here

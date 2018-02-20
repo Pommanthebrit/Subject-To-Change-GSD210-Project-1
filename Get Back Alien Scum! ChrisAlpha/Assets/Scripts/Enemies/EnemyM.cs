@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyM : MonoBehaviour {
+public class EnemyM : EnemyController {
 
-	GameController myGameController;
-	GameObject player;
+
 	float mySpeed;
 
 	void Start () {
-		mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
-		player = GameObject.Find ("Player"); //Locate player position
+	//	mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
+	//	player = GameObject.Find ("Player"); //Locate player position
 	}
 
 	void Update () {
-		if (player != null) {
+		if (_player != null) {
 
 		}
 
@@ -22,10 +21,10 @@ public class EnemyM : MonoBehaviour {
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 		if(transform.position.y < minMoveLimit.y) {
 
-			myGameController.myHealth += -1;
+			_gc.myHealth += -1;
 
-			Debug.Log ("Score: " + myGameController.myScore);
-			Debug.Log ("Player health: " + myGameController.myHealth);
+			Debug.Log ("Score: " + _gc.myScore);
+			Debug.Log ("Player health: " + _gc.myHealth);
 
 			Destroy (gameObject);
 		}

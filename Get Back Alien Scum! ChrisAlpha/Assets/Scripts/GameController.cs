@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
 	#region Player Variables
 	public int myScore;
 	public int myHealth;
-	private GameObject player; //EDITTED
+	public GameObject player;
 	#endregion
 
 	#region Scoring
@@ -34,8 +34,8 @@ public class GameController : MonoBehaviour {
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
 		InvokeRepeating ("IncreaseSpawn", 20f, 12f);
 
-		// Gets reference to player
-		player = GameObject.FindGameObjectWithTag("Player"); //EDITTED
+		//Gets reference to player
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	void Update () {
@@ -54,14 +54,12 @@ public class GameController : MonoBehaviour {
 		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0.05f));
 		Vector2 maxMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0.95f, 1));
 
-		//EDITTED
 		//Spawns enemies at random points at the top of the screen, within camera bounds
 		GameObject spawnedEnemy = (GameObject)Instantiate (myEnemy [Random.Range (0, myEnemy.Length)]);
 		EnemyController spawnedEnemyCtrl = spawnedEnemy.GetComponent<EnemyController>();
-		spawnedEnemyCtrl._playerTransform = player.transform;
+		spawnedEnemyCtrl._player = player;
 		spawnedEnemyCtrl._gc = this;
 		spawnedEnemy.transform.position = new Vector2 (Random.Range (minMoveLimit.x, maxMoveLimit.x), maxMoveLimit.y);
-		//END OF EDIT
 	}
 
 	void IncreaseSpawn () {

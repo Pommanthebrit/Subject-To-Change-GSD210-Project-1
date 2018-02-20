@@ -1567,7 +1567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1346645019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2729,6 +2729,7 @@ MonoBehaviour:
   - {fileID: 1290593645863980, guid: 6a94959eda227b4499b58155b91a2f7b, type: 2}
   myScore: 0
   myHealth: 3
+  player: {fileID: 0}
   scoreBoard: {fileID: 1788217122}
   nameInputBox: {fileID: 1358951347}
   submitButton: {fileID: 1309657607}

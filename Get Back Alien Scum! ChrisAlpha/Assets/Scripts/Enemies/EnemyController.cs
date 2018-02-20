@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	public Transform _playerTransform;
+	public GameObject _player;
 	public GameController _gc;
 
 	[SerializeField] private int _scoreWorth;
@@ -41,4 +41,6 @@ public class EnemyController : MonoBehaviour {
 		Debug.Log ("Score " + _gc.myScore);
 		Destroy (gameObject);
 	}
+
+
 }
