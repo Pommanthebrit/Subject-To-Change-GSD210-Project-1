@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour {
 
 	[Header("Enemy Settings")]
 	[SerializeField] private int _scoreWorth;
-	[SerializeField] private float _health;
+	[SerializeField] protected float _health;
 
 	[Header("Enemy Sounds")]
 	[SerializeField] private AudioClip _hurtSound;
