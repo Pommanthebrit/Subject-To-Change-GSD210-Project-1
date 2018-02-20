@@ -11,8 +11,13 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
+<<<<<<< HEAD
   companyName: DefaultCompany
   productName: Tablet
+=======
+  companyName: Subject
+  productName: GetBackAlienScum
+>>>>>>> de6b4885035042e9685647da67722b4f3a2dbffe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -158,7 +163,11 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+<<<<<<< HEAD
     Android: com.DefaultCompany.Tablet
+=======
+    Android: com.Subject.GetBackAlienScum
+>>>>>>> de6b4885035042e9685647da67722b4f3a2dbffe
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
