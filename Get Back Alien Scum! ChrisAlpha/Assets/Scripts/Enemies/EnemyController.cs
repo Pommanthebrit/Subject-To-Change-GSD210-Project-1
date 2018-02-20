@@ -12,10 +12,9 @@ public class EnemyController : MonoBehaviour {
 
 	private bool _scoreGiven;
 
-	//Destroys enemy if shot by player bullet, increases score
+	// Detects bullet collision and applies damage accordingly
 	void OnCollisionEnter2D(Collision2D collider) 
 	{
-		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
 		if (_scoreGiven == false) 
 		{
 			if (collider.gameObject.tag == "Bullet") 
@@ -25,6 +24,7 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
+	// This function causes damage to this objects health
 	void Damage()
 	{
 		_health--;
@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour {
 		_gc.myScore += _scoreWorth;
 		_scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
 		Debug.Log ("Score " + _gc.myScore);
-		Instantiate (deathEffect, gameObject.transform.position, gameObject.transform.rotation);
+		Instantiate (deathEffect, gameObject.transform.position, gameObject.transform.rotation); // Creates damage effects
 		Destroy (gameObject);
 	}
 }
