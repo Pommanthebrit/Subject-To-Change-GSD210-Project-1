@@ -86,18 +86,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80c77453b34a3146882495ac2467ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  deathEffect: {fileID: 1880416335207710, guid: 94e97948e11ecd14ca675f15b828edc4,
-    type: 2}
   _gc: {fileID: 0}
+  _player: {fileID: 0}
+  _playerCtrl: {fileID: 0}
   _scoreWorth: 10
   _health: 2
+  _hurtSound: {fileID: 0}
+  _deathSound: {fileID: 0}
+  deathEffect: {fileID: 1880416335207710, guid: 94e97948e11ecd14ca675f15b828edc4,
+    type: 2}
   waypoints:
   - {fileID: 1885250520604386, guid: ee3a558da4b3d0a44924c6c6a1d61f83, type: 2}
   - {fileID: 1405566498777372, guid: cffcf2747667fdc46911e7165869a961, type: 2}
   - {fileID: 1102737582102052, guid: 5f833562c59d95147b96ee7ece6a3422, type: 2}
   - {fileID: 1390850166993198, guid: 06e241608fab0a446a693db9b1f87ae3, type: 2}
-  - {fileID: 1462038041542036, guid: 861a1e6e52c8b79408901f39bae894a6, type: 2}
+  - {fileID: 1390850166993198, guid: 06e241608fab0a446a693db9b1f87ae3, type: 2}
   num: 0
   minDist: 0.1
   speed: 3

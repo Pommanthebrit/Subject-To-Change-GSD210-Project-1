@@ -13,6 +13,11 @@ public class EnemyK : EnemyController {
 	public bool rand = false ;
 	public bool go = true ;
 
+
+	void Start(){
+		waypoints [4] = _player;
+	}
+
 	//Find waypoint and go to it, optional to hit waypoint early with minDist
 	void Update () {
 		if (_player != null) {
