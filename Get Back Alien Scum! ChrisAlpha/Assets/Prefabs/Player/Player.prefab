@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845abaa27b81c654fa6061d444804a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: []
   myProjectile: {fileID: 1621881425412518, guid: 4a1edcc11cb070c4cb63059a157d5c69,
     type: 2}
   LeftBarrel: {fileID: 1041307898013236}

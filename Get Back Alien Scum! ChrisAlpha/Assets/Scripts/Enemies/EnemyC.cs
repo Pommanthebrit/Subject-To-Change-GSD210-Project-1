@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyC : EnemyController {
-	
+
 	float mySpeed;
 
 	void Start () {
-		_gc = FindObjectOfType <GameController> ();
-
 		mySpeed = Random.Range (1.6f, 2.4f); //Slightly differs speed of each enemy that spawns
-		_player = GameObject.Find ("Player"); //Locate player position
 	}
 
 	void Update () {

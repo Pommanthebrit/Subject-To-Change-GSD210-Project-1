@@ -2,15 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnemyController : MonoBehaviour {
 
-	public GameObject _player, deathEffect;
+	[Header("References")]
 	public GameController _gc;
+	public GameObject _player;
+	public Player _playerCtrl;
+	private AudioSource _myAudioSource;
 
+	[Header("Enemy Settings")]
 	[SerializeField] private int _scoreWorth;
 	[SerializeField] private float _health;
 
+	[Header("Enemy Sounds")]
+	[SerializeField] private AudioClip _hurtSound;
+	[SerializeField] private AudioClip _deathSound;
+
+	[Header("Other Enemy Effects")]
+	public GameObject deathEffect;
+
+	//Other
 	private bool _scoreGiven;
+
+	void Start()
+	{
+		_myAudioSource = this.gameObject.GetComponent<AudioSource>();
+	}
+
+	void Update()
+	{
+		// Damages player if outside of world space
+		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		if(transform.position.y < minMoveLimit.y) 
+		{
+			DamagePlayer ();
+		}
+	}
 
 	//Destroys enemy if shot by player bullet, increases score
 	void OnCollisionEnter2D(Collision2D collider) 
@@ -20,27 +48,53 @@ public class EnemyController : MonoBehaviour {
 		{
 			if (collider.gameObject.tag == "Bullet") 
 			{
-				Damage();
+				DamageSelf();
 			}
 		}
 	}
 
-	void Damage()
+	// Enemy takes damage
+	void DamageSelf()
 	{
 		_health--;
 		if(_health <= 0)
 		{
 			Die();
 		}
+		else
+		{
+			PlaySound(_hurtSound);
+		}
 	}
 
-	//Assign score to player and instantiate death effect
+	// Assign score to player and instantiate death effect
 	void Die()
 	{
 		_gc.myScore += _scoreWorth;
-		_scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
-		Debug.Log ("Score " + _gc.myScore);
-		Instantiate (deathEffect, gameObject.transform.position, gameObject.transform.rotation);
+		_scoreGiven = true; // Uses bool to ensure score is not given twice (for each player bullet)
+
+		Debug.Log("Score " + _gc.myScore); // TEMP
+
+		PlaySound (_deathSound);
+		Instantiate(deathEffect, gameObject.transform.position, gameObject.transform.rotation);
+		Destroy(gameObject);
+	}
+
+	// Plays a specified sound
+	void PlaySound(AudioClip clip)
+	{
+		_myAudioSource.Stop();
+		_myAudioSource.clip = clip;
+		_myAudioSource.Play();
+	}
+
+	// Damages player
+	void DamagePlayer()
+	{
+		_gc.myHealth += -1;
+
+		_playerCtrl.TakeDamage ();
+
 		Destroy (gameObject);
 	}
 }
