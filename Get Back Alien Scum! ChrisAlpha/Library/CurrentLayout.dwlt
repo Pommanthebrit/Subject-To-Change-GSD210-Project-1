@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 351
+  controlID: 97
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 613}
   m_MaxSize: {x: 18008, y: 18063}
   vertical: 0
-  controlID: 114
+  controlID: 9
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,8 +163,8 @@ MonoBehaviour:
     y: 790
     width: 2041
     height: 517
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -375,20 +375,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Enemies
+    - Assets/Scenes
   m_ViewMode: 0
   m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
+  m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\cstojkos\Documents\GitHub\Subject-To-Change-GSD210-Project-1\Get
+  m_LastProjectPath: C:\Users\aolsen\Documents\GitHub\CURRENT VERSION\Subject-To-Change-GSD210-Project-1\Get
     Back Alien Scum! ChrisAlpha
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 82290000
     m_LastClickedID: 10626
-    m_ExpandedIDs: 00000000822900009c290000ba290000c8290000022a00000c2a0000402a0000d02a0000ffffff7f
+    m_ExpandedIDs: 3c2900007c2900008e290000e0290000402a0000a22a0000062b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -413,24 +412,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 184}
+    scrollPos: {x: 0, y: 104}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000822900009c290000ba290000c8290000022a00000c2a0000402a0000d02a000090310000
+    m_ExpandedIDs: 000000003c2900007c2900008e290000e0290000402a0000a22a0000062b0000122c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: OptionsMenu
+      m_OriginalName: OptionsMenu
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10840
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
@@ -536,26 +535,26 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 94fbffff00000000
+    m_ExpandedIDs: fa3efeffca4dfefffa4efeff386efeff4878feff5e94feffdc9cfeffc4a7feffa6aefeff50fffeffa005ffffee8cffff9efbffff000000006e2b0000782b0000822b00008c2b0000962b0000a02b0000c62b0000be2c0000062d0000202d0000282d0000382d0000fc2f000038300000423000004a30000072340000ba340000dc3400009e350000a8350000c6350000d0350000f6350000163600005e36000078360000803600004c370000563700009a370000ba370000f63700000038000008380000023900004a390000643900006c390000383a0000603a0000863a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: TitleText
+      m_OriginalName: TitleText
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11464
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
   m_ExpandedScenes:
-  - Game
+  - MainMenu
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -587,14 +586,14 @@ MonoBehaviour:
     height: 769
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 0
+  lastFramingTime: 213.08933055488237
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.093578, y: -2.6867967, z: 0.058359724}
+    m_Target: {x: 818.5351, y: 336.61526, z: -2.38797}
     speed: 2
-    m_Value: {x: -5.093578, y: -2.6867967, z: 0.058359724}
+    m_Value: {x: 818.5351, y: 336.61526, z: -2.38797}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -622,9 +621,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.169309
+    m_Target: 785.5573
     speed: 2
-    m_Value: 4.169309
+    m_Value: 785.5573
   m_Ortho:
     m_Target: 1
     speed: 2
