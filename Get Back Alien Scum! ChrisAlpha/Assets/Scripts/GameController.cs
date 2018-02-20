@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 	public int myScore;
 	public int myHealth;
 	public GameObject player;
+	private Player playerCtrl;
 	#endregion
 
 	#region Scoring
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour {
 
 		//Gets reference to player
 		player = GameObject.FindGameObjectWithTag("Player");
+		playerCtrl = player.GetComponent<Player>();
 	}
 	
 	void Update () {
@@ -56,6 +58,7 @@ public class GameController : MonoBehaviour {
 		EnemyController spawnedEnemyCtrl = spawnedEnemy.GetComponent<EnemyController>();
 		spawnedEnemyCtrl._player = player;
 		spawnedEnemyCtrl._gc = this;
+		spawnedEnemyCtrl._playerCtrl = playerCtrl;
 		spawnedEnemy.transform.position = new Vector2 (Random.Range (minMoveLimit.x, maxMoveLimit.x), maxMoveLimit.y);
 	}
 

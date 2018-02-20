@@ -39,9 +39,7 @@ public class EnemyK : EnemyController {
 	//Getting Alien to move forward on a axis
 	public void Move(){
 		Vector3 vectorToTarget = waypoints[num].transform.position - this.transform.position;
-		float angleToTargetDeg = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.AngleAxis(angleToTargetDeg, Vector3.forward);
-
-		gameObject.transform.position += gameObject.transform.right * speed * Time .deltaTime;
+		transform.rotation = Quaternion.LookRotation(Vector3.forward,-vectorToTarget.normalized);
+		gameObject.transform.position -= gameObject.transform.up * speed * Time .deltaTime;
 	}
 }
