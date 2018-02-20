@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class EnemyK : EnemyController {
 
-	// Can be "[SerializeField] Transform[] waypoints;" if you put ("waypoints[num].position" instead of "waypoints[num].transform.position")
 	public GameObject [] waypoints;
 
 	public int num = 0;
-
-	//Private float available in the editor
-	[SerializeField] float demonstration;
 
 	public float minDist;
 	public float speed;
 	public bool rand = false ;
 	public bool go = true ;
 
+	//Find waypoint and go to it, optional to hit waypoint early with minDist
 	void Update () {
 		if (_player != null) {
 			float dist = Vector3.Distance (gameObject.transform.position, waypoints [num].transform.position);
@@ -30,6 +27,7 @@ public class EnemyK : EnemyController {
 						} else {
 							num++;
 						}
+						//optional random waypoint selection
 					} else {
 						num = Random.Range (0, waypoints.Length);
 					}
@@ -38,14 +36,12 @@ public class EnemyK : EnemyController {
 		}
 	}
 
+	//Getting Alien to move forward on a axis
 	public void Move(){
-		//Change made here
 		Vector3 vectorToTarget = waypoints[num].transform.position - this.transform.position;
-		//print(vectorToTarget);
 		float angleToTargetDeg = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angleToTargetDeg, Vector3.forward);
 
-		//Change made here
 		gameObject.transform.position += gameObject.transform.right * speed * Time .deltaTime;
 	}
 }
