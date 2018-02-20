@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 		//Debug.Log ("Player hit by " + collider.gameObject.name);
 
-		if (collider.gameObject.tag == "Enemy") {
+		if (other.gameObject.tag == "Enemy") {
 			TakeDamage ();
 			Destroy (other.gameObject);
 		}
