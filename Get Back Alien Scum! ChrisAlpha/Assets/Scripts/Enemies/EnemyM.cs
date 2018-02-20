@@ -4,21 +4,8 @@ using UnityEngine;
 
 public class EnemyM : EnemyController {
 
-
-	/*float mySpeed;
-
-	void Start () {
-	//	mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
-	//	player = GameObject.Find ("Player"); //Locate player position
-	}
-
-
-	
-	}*/
-
-
 	// Private Variables
-	private float bankAngle = 45.0f;                                         // what angle the ship will rotate to on the z axis when moving
+	private float bankAngle = 45.0f;  // what angle the ship will rotate to on the z axis when moving
 	private float rollDir;
 	private float mySpeed;
 	private bool moveLeft = true;
@@ -26,6 +13,8 @@ public class EnemyM : EnemyController {
 	private float smooth = 2.0f; 
 	private int movement = 1;
 	private float startHealth;
+
+	[SerializeField] private float directionChangeTime;
 
 	private EnemyController _ec;
 	// smooths angel rotation
@@ -42,13 +31,19 @@ public class EnemyM : EnemyController {
 		//ssShoot = transform.GetComponent<ss_Shoot>();
 		mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
 		_player = GameObject.Find ("Player"); //Locate player position
-		StartCoroutine("");
+		StartCoroutine("ChangeDir");
 
 
 	}
 	IEnumerator ChangeDir() {
+		while(true)
+		{
+			movement = 1;
+			yield return new WaitForSeconds(directionChangeTime);
+			movement = 2;
+			yield return new WaitForSeconds(directionChangeTime);
 
-		yield return new WaitForSeconds(.1f);
+		}
 	}
 
 	void Update () {
