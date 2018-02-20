@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+  deathEffect: {fileID: 1880416335207710, guid: 94e97948e11ecd14ca675f15b828edc4,
+    type: 2}
   _gc: {fileID: 0}
   _scoreWorth: 0
   _health: 1

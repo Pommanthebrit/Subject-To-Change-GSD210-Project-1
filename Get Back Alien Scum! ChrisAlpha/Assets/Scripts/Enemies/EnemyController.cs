@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	public GameObject _player;
+	public GameObject _player, deathEffect;
 	public GameController _gc;
 
 	[SerializeField] private int _scoreWorth;
@@ -34,13 +34,13 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
+	//Assign score to player and instantiate death effect
 	void Die()
 	{
 		_gc.myScore += _scoreWorth;
 		_scoreGiven = true; //Uses bool to ensure score is not given twice (for each player bullet)
 		Debug.Log ("Score " + _gc.myScore);
+		Instantiate (deathEffect, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy (gameObject);
 	}
-
-
 }

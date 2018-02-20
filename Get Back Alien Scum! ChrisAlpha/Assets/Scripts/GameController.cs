@@ -24,9 +24,6 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		//Ensures all menus and timescale are reset for game start
 		Time.timeScale = 1f;
-		scoreBoard.SetActive (false);
-		nameInputBox.SetActive (false);
-		submitButton.SetActive (false);
 
 		//Runs a repeating function to spawn enemies at whatever the spawn rate currently is
 		minSpawnRate = 1f;
@@ -71,7 +68,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() {
-		Time.timeScale -= Time.deltaTime; //Slow time gradually
+		Time.timeScale = 0f;
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
 

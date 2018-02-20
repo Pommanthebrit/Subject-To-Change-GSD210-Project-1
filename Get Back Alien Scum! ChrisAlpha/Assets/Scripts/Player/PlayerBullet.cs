@@ -20,8 +20,9 @@ public class PlayerBullet : MonoBehaviour {
 		}
 	}
 
+	//Instantiate death effect and destroy bullet
 	void OnCollisionEnter2D(Collision2D collider) {
-		//Instantiate (bulletDeath, gameObject.transform.position, gameObject.transform.rotation);
+		Instantiate (bulletDeath, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy (gameObject);
 	}
 }
