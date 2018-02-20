@@ -57,6 +57,8 @@ public class EnemyController : MonoBehaviour {
 	void DamageSelf()
 	{
 		_health--;
+
+		print (_health);
 		if(_health <= 0)
 		{
 			Die();
@@ -83,9 +85,16 @@ public class EnemyController : MonoBehaviour {
 	// Plays a specified sound
 	void PlaySound(AudioClip clip)
 	{
-		_myAudioSource.Stop();
-		_myAudioSource.clip = clip;
-		_myAudioSource.Play();
+		if(clip != null)
+		{
+			_myAudioSource.Stop();
+			_myAudioSource.clip = clip;
+			_myAudioSource.Play();
+		}
+		else
+		{
+			print ("Please add sound");
+		}
 	}
 
 	// Damages player
