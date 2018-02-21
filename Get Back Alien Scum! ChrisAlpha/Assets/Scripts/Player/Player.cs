@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	GameController myGameController;
-
-	void Start () {
-		myGameController = FindObjectOfType<GameController> ();
-	}
-	
-	void Update () {
-		
-	}
+	public GameController _gc;
 
 	//Collision detection for player turret where applicable
 	void OnCollisionEnter2D(Collision2D other) {
@@ -24,12 +16,13 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	//Red tint to indicate player is being damaged
 	public void TakeDamage() {
 		StartCoroutine(DamageBlink());
 
-		myGameController.myHealth += -1;
-		Debug.Log ("Player health " + myGameController.myHealth);
-		Debug.Log ("Score " + myGameController.myScore);
+		//Reduce health in GC script when damaged
+		_gc.myHealth += -1;
+		Debug.Log ("Player health " + _gc.myHealth);
 	}
 
 	IEnumerator DamageBlink() { //coroutine for making the player ship flash when taking damage
