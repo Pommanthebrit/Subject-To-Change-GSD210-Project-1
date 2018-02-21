@@ -35,8 +35,9 @@ public class EnemyController : MonoBehaviour {
 		//Debug.Log (gameObject + " hit by " + collider.gameObject.name);
 		if (_scoreGiven == false) 
 		{
-			if (collider.gameObject.tag == "Bullet") 
+			if (collider.gameObject.tag == "Bullet")
 			{
+				print("collision");
 				DamageSelf();
 			}
 		}
@@ -55,7 +56,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	// Assign score to player and instantiate death effect
-	void Die()
+	protected virtual void Die()
 	{
 		_gc.myScore += _scoreWorth;
 		_scoreGiven = true; // Uses bool to ensure score is not given twice (for each player bullet)

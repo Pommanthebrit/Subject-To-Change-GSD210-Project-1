@@ -1241,6 +1241,52 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610319505}
+--- !u!1 &739595330 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1390850166993198, guid: 06e241608fab0a446a693db9b1f87ae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 172547123}
+--- !u!114 &739595333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739595330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b50fbfe921e4d43859f9e6c2b78f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gc: {fileID: 0}
+  _player: {fileID: 0}
+  _playerCtrl: {fileID: 0}
+  _scoreWorth: 0
+  _health: 0
+  deathEffect: {fileID: 0}
+  _rb: {fileID: 0}
+  _bugAmount: 0
+  _movementSpeed: 0
+  _bugPrefab: {fileID: 0}
+--- !u!50 &739595334
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739595330}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &770654346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4497648760776902, guid: ee3a558da4b3d0a44924c6c6a1d61f83, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1885250520604386, guid: ee3a558da4b3d0a44924c6c6a1d61f83, type: 2}
       propertyPath: m_IsActive
@@ -2359,7 +2405,7 @@ RectTransform:
   - {fileID: 363871032}
   - {fileID: 158508785}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3295,7 +3341,7 @@ RectTransform:
   - {fileID: 164560346}
   - {fileID: 232376663}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3903,7 +3949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4563445136704642, guid: 861a1e6e52c8b79408901f39bae894a6, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 212114440653504456, guid: 861a1e6e52c8b79408901f39bae894a6,
         type: 2}
@@ -4287,7 +4333,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4350,6 +4396,7 @@ MonoBehaviour:
   - {fileID: 1730425822875912, guid: 2d57b10f2b3d7e84ab77af684cf78e60, type: 2}
   - {fileID: 1702838750691324, guid: c04e2504860f6954194fdf2ebc268fa8, type: 2}
   - {fileID: 1290593645863980, guid: 6a94959eda227b4499b58155b91a2f7b, type: 2}
+  - {fileID: 1888260620742042, guid: 0902f7bc5684f0f499038962199b6876, type: 2}
   myScore: 0
   myHealth: 4
   player: {fileID: 2027553246}
