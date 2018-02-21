@@ -376,25 +376,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.5
-  m_Text: 'Game Design - Aston, Kyle, Chris, Myles and David
+  m_Text: 'David Geurts
 
 
-    Project Managment - <Insert name(s)>
+    Aston Olsen
 
 
-    Art & Animation - Kyle and <Insert name(s)>
+    Kyle Runeckles
 
 
-    UI - Aston and <Insert name(s)>
+    Chris Stojkos
 
 
-    Programming - Aston, Kyle, Chris, Myles and David
-
-
-    Sound Effects - <Insert name(s)>
-
-
-    Music - <Insert name(s)>'
+    Myles Warburton'
 --- !u!222 &365443073
 CanvasRenderer:
   m_ObjectHideFlags: 0
