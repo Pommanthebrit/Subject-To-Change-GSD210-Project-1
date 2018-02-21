@@ -70,6 +70,35 @@ public class GameController : MonoBehaviour {
 		//Debug.Log (maxSpawnRate + " rate increased!");
 	}
 
+	public void healthBar () {
+
+	}
+
+	/*
+//Bar for building up till next player turn - rescales image from nill to full size
+	void ProgressBar () {
+		if (enemyTurn == false) {
+			barCD = barCD + Time.deltaTime;
+			float currentBarCD = barCD / maxBarCD;
+			progressBar.transform.localScale = new Vector3 (Mathf.Clamp (currentBarCD, 0, 1), progressBar.transform.localScale.y, progressBar.transform.localScale.z);
+
+			//Resets bar when full and builds magic
+			if (barCD >= maxBarCD) {
+				myMagic += enemyStateMachine.remainingEnemies.Length;
+				//Caps magic at 12, cannot fall below zero
+				myMagic = Mathf.Clamp (myMagic, 0, 12);
+				Debug.Log ("Magic power: " + myMagic);
+				currentState = TurnState.THINKING;
+			}
+		}
+	}
+
+	float barCD = 0f;
+	float maxBarCD = 5f;
+	[HideInInspector] public Image progressBar;
+	public bool enemyTurn;
+	*/
+
 	public void GameOver() {
 		Time.timeScale = 0f;
 		scoreBoard.SetActive (true); //Enables the scoreboard game object

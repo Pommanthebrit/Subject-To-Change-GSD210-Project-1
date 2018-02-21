@@ -5,10 +5,8 @@ using UnityEngine;
 public class EnemyM : EnemyController {
 
 	// Private Variables
-	private float bankAngle = 45.0f;  // what angle the Enemy will rotate to on the z axis when moving
 	private float mySpeed;
 	private Vector3 moveDir;
-	private float smooth = 2.0f; // smooths angle rotation
 	private int movement = 1;
 	private float startHealth;
 	[SerializeField] private float directionChangeTime; // time betweenwhen the 
@@ -39,27 +37,16 @@ public class EnemyM : EnemyController {
 
 
 	void Update () {
+		if (_player != null) {
+			// calls the switch statement that checks if the way the Enemy should move has changed
+			PerformMove();
 
-		// calls the switch statement that checks if the way the Enemy should move has changed
-		PerformMove();
 
-
-		// checks to see if the 
-		if(_health < startHealth)
-		{
-			movement = 3;
-		}
-
-		//Destroy enemy if goes out of camera bounds (at bottom of screen)
-		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-		if(transform.position.y < minMoveLimit.y) {
-
-			_gc.myHealth += -1;
-
-			Debug.Log ("Score: " + _gc.myScore);
-			Debug.Log ("Player health: " + _gc.myHealth);
-
-			Destroy (gameObject);
+			// checks to see if the 
+			if(_health < startHealth)
+			{
+				movement = 3;
+			}
 		}
 	}
 		
