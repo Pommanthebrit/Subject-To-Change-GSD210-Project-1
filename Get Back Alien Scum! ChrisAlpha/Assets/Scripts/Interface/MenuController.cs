@@ -7,8 +7,16 @@ using UnityEngine.SceneManagement; //allows loading of scenes
 
 public class MenuController : MonoBehaviour {
 
+//	public void OpenSceneDelayed(string sceneName){ 
+//		Invoke ("OpenScene", 1f); //Quits the application (Built game only, doesn't work within Unity editor)
+//	}
+
 	public void OpenScene(string sceneName){ //function for loading scnees
 		SceneManager.LoadScene (sceneName); //Loads the assigned scene when this function is run
+	}
+
+	public void QuitDelayed(){ 
+		Invoke ("Quit", 1f); //Quits the application (Built game only, doesn't work within Unity editor)
 	}
 
 	public void Quit(){ //function for quitting the game when Quit button is clicked

@@ -11,8 +11,8 @@ public class ScoreBoardController : MonoBehaviour {
 	int[] highScoreValues; //Array for high score values
 	string[] highScoreNames; //Array for high score player Names
 
-	AudioSource myAudioSource;
-	public AudioClip wowNewHighScore;
+	AudioSource myAudioSource; //assigns audio source
+	public AudioClip wowNewHighScore; //assigns sound clip
 
 	void Start () { // Use this for initialization
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
@@ -52,10 +52,8 @@ public class ScoreBoardController : MonoBehaviour {
 	}
 
 	public void NewHighScore(){ //function for when player gets a new high score (top 10)
-		//Plays "new high score" audio file
-		print ("New Highscore");
-		myAudioSource = GetComponent<AudioSource> ();
-		myAudioSource.PlayOneShot (wowNewHighScore);
+		myAudioSource = GetComponent<AudioSource> (); //Gets audio source
+		myAudioSource.PlayOneShot (wowNewHighScore); //Plays "new high score" audio file
 	}
 
 

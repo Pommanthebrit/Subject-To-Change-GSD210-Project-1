@@ -54,7 +54,8 @@ public class GameController : MonoBehaviour {
 		//Score and timer displays on HUD
 		gameTimer += Time.deltaTime;
 
-		scoreHUD.GetComponent<Text> ().text = myScore.ToString ();
+		//scoreHUD.GetComponent<Text> ().text = myScore.ToString ();
+		scoreHUD.GetComponent<Text> ().text = ("Score: " + myScore.ToString ());
 		timerHUD.GetComponent<Text> ().text = gameTimer.ToString ("##");
 	}
 
@@ -82,7 +83,8 @@ public class GameController : MonoBehaviour {
 
 	public void GameOver() { //function for game ending
 		gameEnded = true;
-		Pause(); //calls pause function
+		Time.timeScale = 0f; //sets timescale to 0 (paused)
+		playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
 
@@ -90,22 +92,21 @@ public class GameController : MonoBehaviour {
 		GetComponent<ScoreBoardController> ().CheckForHighScore (myScore, playerName.text); //calls CheckForHighScore function from ScoreboardController script
 		nameInputBox.SetActive (false); //Disables name input box
 		submitButton.SetActive (false); //Disables submit button
-		quitToMenuButton.SetActive (true); //Enables the Quit to main menu button
 	}
 
 	public void Pause () {
-		if (paused == false) {
-				if (gameEnded == false){
-					pauseMenu.SetActive (true); //enables pause menu
-				}
-			paused = true; //sets pause variable to true
-			Time.timeScale = 0f; //sets timescale to 0 (paused)
-			playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
-		} else {
-			pauseMenu.SetActive (false); //enables pause menu
-			paused = false; //sets pause variable to true
-			Time.timeScale = 1f; //sets timescale to 0 (paused)
-			playerCtrl.GetComponent<Shoot>().enabled = true; //enables shoot script
+		if (gameEnded == false){
+			if (paused == false) {
+				pauseMenu.SetActive (true); //enables pause menu
+				paused = true; //sets pause variable to true
+				Time.timeScale = 0f; //sets timescale to 0 (paused)
+				playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
+			} else {
+				pauseMenu.SetActive (false); //enables pause menu
+				paused = false; //sets pause variable to true
+				Time.timeScale = 1f; //sets timescale to 0 (paused)
+				playerCtrl.GetComponent<Shoot>().enabled = true; //enables shoot script
+			}
 		}
 	}
 }
