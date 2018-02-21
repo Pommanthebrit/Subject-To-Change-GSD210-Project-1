@@ -18,11 +18,13 @@ public class GameController : MonoBehaviour {
 	#endregion
 
 	#region Scoring
-	public GameObject scoreBoard, nameInputBox, submitButton, quitToMenuButton; //UI objects that can be enabled or disabled as required
+	bool paused;
+	public GameObject scoreBoard, nameInputBox, submitButton, quitToMenuButton, pauseMenu; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
 
 	void Start () {
+		paused = false;
 		//Ensures all menus and timescale are reset for game start
 		Time.timeScale = 1f;
 
@@ -38,6 +40,10 @@ public class GameController : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (Input.GetButtonDown ("Cancel")) {
+			Pause ();
+		}
+
 		//Prevents spawnrate from becoming too fast to keep up with
 		minSpawnRate = Mathf.Clamp (minSpawnRate, 0.4f, 1f);
 		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 0.8f, 1.8f);
@@ -70,8 +76,8 @@ public class GameController : MonoBehaviour {
 		//Debug.Log (maxSpawnRate + " rate increased!");
 	}
 
-	public void GameOver() {
-		Time.timeScale = 0f;
+	public void GameOver() { //function for game ending
+		Pause(); //calls pause function
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
 
@@ -83,6 +89,18 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void Pause () {
-
+		if (paused == false) {
+			pauseMenu.SetActive (true); //enables pause menu
+			paused = true; //sets pause variable to true
+			Time.timeScale = 0f; //sets timescale to 0 (paused)
+			GameObject playerObject = GameObject.FindWithTag("Player"); //finds player
+			playerObject.GetComponent<Shoot>().enabled = false; //disables shoot script
+		} else {
+			pauseMenu.SetActive (false); //enables pause menu
+			paused = false; //sets pause variable to true
+			Time.timeScale = 1f; //sets timescale to 0 (paused)
+			GameObject playerObject = GameObject.FindWithTag("Player"); //finds player
+			playerObject.GetComponent<Shoot>().enabled = true; //enables shoot script
+		}
 	}
 }
