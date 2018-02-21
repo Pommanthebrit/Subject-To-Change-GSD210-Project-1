@@ -18,12 +18,13 @@ public class GameController : MonoBehaviour {
 	#endregion
 
 	#region Scoring
-	bool paused;
+	bool paused, gameEnded;
 	public GameObject scoreBoard, nameInputBox, submitButton, quitToMenuButton, pauseMenu; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
 
 	void Start () {
+		gameEnded = false;
 		paused = false;
 		//Ensures all menus and timescale are reset for game start
 		Time.timeScale = 1f;
@@ -49,7 +50,7 @@ public class GameController : MonoBehaviour {
 		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 0.8f, 1.8f);
 
 		//Game end
-		if (myHealth <= 0) {
+		if (myHealth <= 0 && gameEnded == false) {
 			GameOver ();
 		}
 	}
@@ -77,6 +78,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() { //function for game ending
+		gameEnded = true;
 		Pause(); //calls pause function
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 	}
@@ -90,7 +92,9 @@ public class GameController : MonoBehaviour {
 
 	public void Pause () {
 		if (paused == false) {
-			pauseMenu.SetActive (true); //enables pause menu
+				if (gameEnded == false){
+					pauseMenu.SetActive (true); //enables pause menu
+				}
 			paused = true; //sets pause variable to true
 			Time.timeScale = 0f; //sets timescale to 0 (paused)
 			GameObject playerObject = GameObject.FindWithTag("Player"); //finds player
