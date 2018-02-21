@@ -62,7 +62,6 @@ public class EnemyController : MonoBehaviour {
 
 		Debug.Log ("Score: " + _gc.myScore);
 
-		//PlaySound (_deathSound);
 		Instantiate(deathEffect, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy(gameObject);
 	}

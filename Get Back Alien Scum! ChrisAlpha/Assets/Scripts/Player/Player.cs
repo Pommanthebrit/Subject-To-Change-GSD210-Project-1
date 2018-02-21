@@ -5,6 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public GameController _gc;
+	AudioSource myAudioSource;
+	public AudioClip takeDamage;
+
+	void Start () {
+		myAudioSource = GetComponent<AudioSource> ();
+	}
 
 	//Collision detection for player turret where applicable
 	void OnCollisionEnter2D(Collision2D other) {
@@ -23,6 +29,8 @@ public class Player : MonoBehaviour {
 		//Reduce health in GC script when damaged
 		_gc.myHealth += -1;
 		Debug.Log ("Player health " + _gc.myHealth);
+
+		myAudioSource.PlayOneShot (takeDamage);
 	}
 
 	IEnumerator DamageBlink() { //coroutine for making the player ship flash when taking damage
