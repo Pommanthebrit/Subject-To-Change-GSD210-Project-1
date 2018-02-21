@@ -5,36 +5,26 @@ using UnityEngine;
 public class EnemyM : EnemyController {
 
 	// Private Variables
-	private float bankAngle = 45.0f;  // what angle the ship will rotate to on the z axis when moving
-	private float rollDir;
+	private float bankAngle = 45.0f;  // what angle the Enemy will rotate to on the z axis when moving
 	private float mySpeed;
-	private bool moveLeft = true;
 	private Vector3 moveDir;
-	private float smooth = 2.0f; 
+	private float smooth = 2.0f; // smooths angle rotation
 	private int movement = 1;
 	private float startHealth;
-
-	[SerializeField] private float directionChangeTime;
-
-	private EnemyController _ec;
-	// smooths angel rotation
-
-
-	// How far right can the enemy ship go
-	//private ss_Shoot ssShoot;
+	[SerializeField] private float directionChangeTime; // time betweenwhen the 
 
 	void Start ()
 	{
 		startHealth = _health;
-		_ec = GetComponent<EnemyController> ();
 
-		//ssShoot = transform.GetComponent<ss_Shoot>();
+
 		mySpeed = Random.Range (1.4f, 2.2f); //Slightly differs speed of each enemy that spawns
 		_player = GameObject.Find ("Player"); //Locate player position
-		StartCoroutine("ChangeDir");
+		StartCoroutine("ChangeDir"); // Starts the Coroutine that makes sure that the Enemy go left and right
 
 
 	}
+	// change the number so that the direction that the Enemy will go is updated
 	IEnumerator ChangeDir() {
 		while(true)
 		{
@@ -46,11 +36,15 @@ public class EnemyM : EnemyController {
 		}
 	}
 
+
+
 	void Update () {
-		if (_player != null) {
 
-		}
+		// calls the switch statement that checks if the way the Enemy should move has changed
+		PerformMove();
 
+
+		// checks to see if the 
 		if(_health < startHealth)
 		{
 			movement = 3;
@@ -68,67 +62,26 @@ public class EnemyM : EnemyController {
 			Destroy (gameObject);
 		}
 	}
-
-	void FixedUpdate ()
-	{
-		UpdateOrientation(rollDir);
-		PerformMove();
-	}
-
-	private void UpdateOrientation(float moveBy)                                                            // Tilts the enemy ship in the correct direction
-	{
-		Quaternion target;
-
-		if (moveBy == 0.0f)
-		{
-			target = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-			transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime * smooth);
-		}
-		else if (moveBy == 1.0f)
-		{
-			target = Quaternion.Euler(0.0f, 0f, bankAngle);
-			transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
-		}
-		else if (moveBy == -1.0f)
-		{
-			target = Quaternion.Euler(0.0f, 0f, -bankAngle);
-			transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
-		}
-	}
-
-
-	/*void CheckBoundary()                                                                                    // Tells the movement script an enemy has reached the boundaries, change direction
-	{
-		if ((transform.position.x < boundaryLeft) || (transform.position.x > boundaryRight))
-		{
-			enemyMMovement.ChangeDir();
-
-		}
-	}*/
-
-
-
-
-	public void EnemyFire ()
-	{
-		//ssShoot.EnemyShoot();
-	}
-
-
-	void PerformMove (){
+		
+	// makes the Enemy move and look at the player
+		void PerformMove (){
 
 		switch (movement) {
 		case 1:
 			transform.position = Vector2.MoveTowards (transform.position, Vector2.left, mySpeed * Time.deltaTime);
+			transform.rotation = Quaternion.LookRotation (Vector3.forward, transform.position - _player.transform.position);
 			break;
 		case 2:
 			transform.position = Vector2.MoveTowards (transform.position, Vector2.right, mySpeed * Time.deltaTime);
+			transform.rotation = Quaternion.LookRotation (Vector3.forward, transform.position - _player.transform.position);
 			break;
 		case 3:
 			transform.position = Vector2.MoveTowards (transform.position, _player.transform.position, mySpeed * Time.deltaTime);
+			transform.rotation = Quaternion.LookRotation (Vector3.forward, transform.position - _player.transform.position);
 			break;
 		default:
 			transform.position = Vector2.MoveTowards (transform.position, _player.transform.position, mySpeed * Time.deltaTime);
+			transform.rotation = Quaternion.LookRotation (Vector3.forward, transform.position - _player.transform.position);
 			break;
 		}
 	}
