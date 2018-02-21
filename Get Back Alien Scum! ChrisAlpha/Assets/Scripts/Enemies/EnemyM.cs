@@ -5,13 +5,11 @@ using UnityEngine;
 public class EnemyM : EnemyController {
 
 	// Private Variables
-	private float bankAngle = 45.0f;  // what angle the Enemy will rotate to on the z axis when moving
 	private float mySpeed;
 	private Vector3 moveDir;
-	private float smooth = 2.0f; // smooths angle rotation
 	private int movement = 1;
 	private float startHealth;
-	[SerializeField] private float directionChangeTime; // time betweenwhen the 
+	[SerializeField] private float directionChangeTime; // time between when the enemy changes movement pattern
 
 	void Start ()
 	{

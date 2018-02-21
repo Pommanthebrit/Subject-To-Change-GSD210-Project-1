@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour {
 		minSpawnRate = 1f;
 		maxSpawnRate = 1.8f;
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
-		InvokeRepeating ("IncreaseSpawn", 20f, 12f);
+		InvokeRepeating ("IncreaseSpawn", 14f, 10f);
 
 		//Gets reference to player
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -71,11 +71,42 @@ public class GameController : MonoBehaviour {
 
 	void IncreaseSpawn () {
 		//Spawnrate becomes progressively faster in small increments
-		minSpawnRate = minSpawnRate - 0.04f;
-		maxSpawnRate = maxSpawnRate - 0.04f;
-		//Debug.Log (minSpawnRate + " rate increased!");
-		//Debug.Log (maxSpawnRate + " rate increased!");
+		minSpawnRate = minSpawnRate - 0.05f;
+		maxSpawnRate = maxSpawnRate - 0.05f;
+		Debug.Log (minSpawnRate + " min rate increased!");
+		Debug.Log (maxSpawnRate + " max rate increased!");
 	}
+
+	public void HPBar () {
+
+	}
+
+	/*
+	//Bar for building up till next player turn - rescales image from nill to full size
+	void ProgressBar () {
+		if (enemyTurn == false) {
+			barCD = barCD + Time.deltaTime;
+			float currentBarCD = barCD / maxBarCD;
+			progressBar.transform.localScale = new Vector3 (Mathf.Clamp (currentBarCD, 0, 1), progressBar.transform.localScale.y, progressBar.transform.localScale.z);
+
+			//Resets bar when full and builds magic
+			if (barCD >= maxBarCD) {
+				myMagic += enemyStateMachine.remainingEnemies.Length;
+				//Caps magic at 12, cannot fall below zero
+				myMagic = Mathf.Clamp (myMagic, 0, 12);
+				Debug.Log ("Magic power: " + myMagic);
+				currentState = TurnState.THINKING;
+			}
+		}
+	}
+
+	//ProgressBar variables
+	float barCD = 0f;
+	float maxBarCD = 5f;
+	[HideInInspector] public Image progressBar;
+	public bool enemyTurn;
+
+	*/
 
 	public void GameOver() { //function for game ending
 		gameEnded = true;
