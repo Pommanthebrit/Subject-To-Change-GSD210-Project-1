@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour {
 		submitButton.SetActive (false); //Disables submit button
 	}
 
-	public void Pause () {
+	public void Pause() {
 		if (gameEnded == false){
 			if (paused == false) {
 				pauseMenu.SetActive (true); //enables pause menu

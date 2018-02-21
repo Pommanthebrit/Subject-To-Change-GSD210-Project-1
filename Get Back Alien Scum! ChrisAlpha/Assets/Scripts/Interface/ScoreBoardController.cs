@@ -56,7 +56,6 @@ public class ScoreBoardController : MonoBehaviour {
 		myAudioSource.PlayOneShot (wowNewHighScore); //Plays "new high score" audio file
 	}
 
-
 	void DrawScores() { //function for displaying scores on scoreboard
 		for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
 			highScores [x].text = highScoreNames [x] + ":" + highScoreValues [x].ToString (); //Updates the highscore text boxes on the scoreboard
