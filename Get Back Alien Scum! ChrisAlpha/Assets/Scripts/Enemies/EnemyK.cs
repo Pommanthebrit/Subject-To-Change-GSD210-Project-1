@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyK : EnemyController {
 
-	public GameObject [] waypoints; //Locations for enemies to travel between
+	public GameObject [] waypoints;
 
 	public int num = 0;
 

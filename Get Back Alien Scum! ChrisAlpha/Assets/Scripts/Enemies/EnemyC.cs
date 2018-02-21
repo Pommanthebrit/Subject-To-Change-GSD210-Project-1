@@ -7,7 +7,7 @@ public class EnemyC : EnemyController {
 	float mySpeed;
 
 	void Start () {
-		mySpeed = Random.Range (1.6f, 2.6f); //Slightly differs speed of each enemy that spawns
+		mySpeed = Random.Range (1.6f, 2.4f); //Slightly differs speed of each enemy that spawns
 	}
 
 	void Update () {

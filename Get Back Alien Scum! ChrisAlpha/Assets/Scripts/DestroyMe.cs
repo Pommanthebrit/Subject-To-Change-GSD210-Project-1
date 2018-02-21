@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyMe : MonoBehaviour {
 
-	public float destroyDelay; //Customise each objects destruction delay
+	public float destroyDelay;
 
 	//Simple script to destroy a game object after its instantiation
 	void Start () {

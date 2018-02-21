@@ -8,16 +8,25 @@ public class EnemyController : MonoBehaviour {
 	public GameController _gc;
 	public GameObject _player;
 	public Player _playerCtrl;
+	private AudioSource _myAudioSource;
 
 	[Header("Enemy Settings")]
 	[SerializeField] private int _scoreWorth;
 	[SerializeField] protected float _health;
+
+	[Header("Enemy Sounds")]
+	[SerializeField] private AudioClip _deathSound;
 
 	[Header("Other Enemy Effects")]
 	public GameObject deathEffect;
 
 	//Other
 	private bool _scoreGiven;
+
+	void Start()
+	{
+		_myAudioSource = this.gameObject.GetComponent<AudioSource>();
+	}
 
 	void Update()
 	{
@@ -47,7 +56,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		_health--;
 
-		//print (_health);
+		print (_health);
 		if(_health <= 0)
 		{
 			Die();
@@ -60,11 +69,26 @@ public class EnemyController : MonoBehaviour {
 		_gc.myScore += _scoreWorth;
 		_scoreGiven = true; // Uses bool to ensure score is not given twice (for each player bullet)
 
-		Debug.Log ("Score: " + _gc.myScore);
+		Debug.Log("Score " + _gc.myScore); // TEMP
 
-		//PlaySound (_deathSound);
+		PlaySound (_deathSound);
 		Instantiate(deathEffect, gameObject.transform.position, gameObject.transform.rotation);
 		Destroy(gameObject);
+	}
+
+	// Plays a specified sound
+	void PlaySound(AudioClip clip)
+	{
+		if(clip != null && _myAudioSource != null)
+		{
+			_myAudioSource.Stop();
+			_myAudioSource.clip = clip;
+			_myAudioSource.Play();
+		}
+		else
+		{
+			print ("Please add sound");
+		}
 	}
 
 	// Damages player
