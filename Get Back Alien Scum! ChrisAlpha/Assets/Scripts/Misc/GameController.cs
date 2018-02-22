@@ -38,8 +38,8 @@ public class GameController : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Input.GetButtonDown ("Cancel")) {
-			Pause ();
+		if (Input.GetButtonDown ("Cancel")) { //checks if cancel key is pressed
+			Pause (); //calls function
 		}
 
 		//Prevents spawnrate from becoming too fast to keep up with
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() { //function for game ending
-		gameEnded = true;
+		gameEnded = true; //sets gameEnded to true
 		Time.timeScale = 0f; //sets timescale to 0 (paused)
 		playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
@@ -94,14 +94,14 @@ public class GameController : MonoBehaviour {
 		submitButton.SetActive (false); //Disables submit button
 	}
 
-	public void Pause() {
-		if (gameEnded == false){
-			if (paused == false) {
+	public void Pause() { //function for pausing and un-pausing the game
+		if (gameEnded == false){ //checks if game has ended
+			if (paused == false) { //do this if game is not already paused
 				pauseMenu.SetActive (true); //enables pause menu
 				paused = true; //sets pause variable to true
 				Time.timeScale = 0f; //sets timescale to 0 (paused)
 				playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
-			} else {
+			} else { //do this if game is already paused
 				pauseMenu.SetActive (false); //enables pause menu
 				paused = false; //sets pause variable to true
 				Time.timeScale = 1f; //sets timescale to 0 (paused)

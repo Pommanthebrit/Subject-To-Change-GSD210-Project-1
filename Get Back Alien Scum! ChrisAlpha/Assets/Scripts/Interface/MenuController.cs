@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement; //allows loading of scenes
 
 public class MenuController : MonoBehaviour {
 
-	public GameObject GameController;
-
 	public void OpenSceneDelayed(string sceneName){ //function for loading scenes with a delay
 		StartCoroutine("Load", sceneName); //Calls coroutine
 	}
@@ -23,8 +21,8 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene (sceneName); //Loads the assigned scene when this function is run
 	}
 
-	public void QuitDelayed(){ 
-		Invoke ("Quit", 0.3f); //Quits the application (Built game only, doesn't work within Unity editor)
+	public void QuitDelayed(){ //function quit quitting with delay
+		Invoke ("Quit", 0.3f); //calls function with specified delay
 	}
 
 	public void Quit(){ //function for quitting the game when Quit button is clicked

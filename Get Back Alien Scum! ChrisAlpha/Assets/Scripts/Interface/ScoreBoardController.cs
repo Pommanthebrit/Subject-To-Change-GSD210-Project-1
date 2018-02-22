@@ -53,8 +53,8 @@ public class ScoreBoardController : MonoBehaviour {
 				highScoreNames [x] = _userName; //sets the highScoreNames to the current score value for each iteration of the loop
 				DrawScores (); //calls function DrawScores
 				SaveScores (); //calls function SaveScores
-					if (_value > highScoreValues [9]) { 
-						NewHighScore ();
+					if (_value > highScoreValues [9]) { //checks if score is in the top 10
+						NewHighScore (); //calls function
 					}
 				break; //exits loop
 			}

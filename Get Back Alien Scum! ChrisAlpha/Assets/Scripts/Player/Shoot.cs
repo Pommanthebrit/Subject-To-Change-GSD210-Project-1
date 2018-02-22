@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 
 public class Shoot : MonoBehaviour {
 
-	Animator myAnimator;
-	AudioSource myAudioSource;
-	public AudioClip[] shoot;
+	Animator myAnimator; //animation for turret
+	AudioSource myAudioSource; //audio source for bullets
+	public AudioClip[] shoot; //audio sound
 
-	public GameObject myProjectile, LeftBarrel, RightBarrel;
-	public float bulletSpeed;
+	public GameObject myProjectile, LeftBarrel, RightBarrel; //game objects for projecticle and projectile spawn locations
+	public float bulletSpeed; //projecticle speed variable
 
 	void Start () { // Use this for initialization
 		myAnimator = GetComponent<Animator> ();
@@ -21,8 +21,8 @@ public class Shoot : MonoBehaviour {
 	void Update () {
 		//if (Input.GetTouch (0).phase == TouchPhase.Began) {
 		if (Input.GetButtonDown ("Fire1")) { //checks if fire button is being pressed
-			myAnimator.SetTrigger ("Shoot");
-			myAudioSource.PlayOneShot (shoot[Random.Range (0, shoot.Length)]);
+			myAnimator.SetTrigger ("Shoot"); //runs shoot animation
+			myAudioSource.PlayOneShot (shoot[Random.Range (0, shoot.Length)]); //plays shoot audio effect
 			Vector3 worldMousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition); //Gets the mouse postion.
 			transform.rotation = Quaternion.LookRotation (Vector3.forward, worldMousePos - transform.position); //Rotations the projectile towards the mouse position
 			Vector2 dir = (Vector2)((worldMousePos - transform.position)); //sets the vector from current position towards the mouse position.

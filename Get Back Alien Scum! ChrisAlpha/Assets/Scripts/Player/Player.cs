@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 
 	//Red tint to indicate player is being damaged
 	public void TakeDamage() {
-		StartCoroutine(DamageBlink());
+		StartCoroutine(DamageBlink()); //calls coroutine
 
 		//Reduce health in GC script when damaged
 		_gc.myHealth += -1;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
 
 	IEnumerator DamageBlink() { //coroutine for making the player ship flash when taking damage
 		GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0); //changes ship colour to red
-		yield return new WaitForSeconds (0.1f);
+		yield return new WaitForSeconds (0.1f); //waits for specified time
 		GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1); //changes ship back to previous colour
 	}
 }
