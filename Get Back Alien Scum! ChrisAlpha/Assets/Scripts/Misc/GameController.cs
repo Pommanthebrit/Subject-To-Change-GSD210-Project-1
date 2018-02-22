@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
 	#region Scoring
 	bool paused, gameEnded;
 	public float gameTimer;
+	AudioSource myAudioSource;
+	public AudioClip defeatTone;
 	public GameObject scoreHUD, timerHUD, scoreBoard, nameInputBox, submitButton, quitToMenuButton, pauseMenu; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
@@ -32,10 +34,15 @@ public class GameController : MonoBehaviour {
 		Time.timeScale = 1f;
 
 		//Runs a repeating function to spawn enemies at whatever the spawn rate currently is
-		minSpawnRate = 1f;
-		maxSpawnRate = 1.8f;
+		minSpawnRate = 0.8f;
+		maxSpawnRate = 1.6f;
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
 		InvokeRepeating ("IncreaseSpawn", 14f, 10f);
+<<<<<<< HEAD
+=======
+
+		myAudioSource = GetComponent<AudioSource> ();
+>>>>>>> e7c846cf9059174b18ea80584c443e911220bd3f
 		playerCtrl = player.GetComponent<Player>();
 	}
 	
@@ -45,8 +52,8 @@ public class GameController : MonoBehaviour {
 		}
 
 		//Prevents spawnrate from becoming too fast to keep up with
-		minSpawnRate = Mathf.Clamp (minSpawnRate, 0.4f, 1f);
-		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 0.8f, 1.8f);
+		minSpawnRate = Mathf.Clamp (minSpawnRate, 0.1f, 0.8f);
+		maxSpawnRate = Mathf.Clamp (maxSpawnRate, 0.2f, 1.6f);
 
 		//Game end
 		if (myHealth <= 0 && gameEnded == false) {
@@ -63,8 +70,8 @@ public class GameController : MonoBehaviour {
 
 	void SpawnEnemy () {
 		//Defines the top left and top right edges of where the game camera can see
-		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0.05f));
-		Vector2 maxMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0.95f, 1));
+		Vector2 minMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0.1f));
+		Vector2 maxMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0.9f, 1));
 
 		//Spawns enemies at random points at the top of the screen, within camera bounds
 		GameObject spawnedEnemy = (GameObject)Instantiate (myEnemy [Random.Range (0, myEnemy.Length)]);
@@ -84,6 +91,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() { //function for game ending
+		myAudioSource.PlayOneShot(defeatTone);
 		gameEnded = true; //sets gameEnded to true
 		Time.timeScale = 0f; //sets timescale to 0 (paused)
 		playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script

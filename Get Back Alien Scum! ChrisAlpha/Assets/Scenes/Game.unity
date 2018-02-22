@@ -4401,6 +4401,7 @@ MonoBehaviour:
   finalScore: 0
   player: {fileID: 2027553246}
   gameTimer: 0
+  defeatTone: {fileID: 8300000, guid: 27c6ac3a8f0d8c64b8e9f7471e6b7922, type: 3}
   scoreHUD: {fileID: 1291071199}
   timerHUD: {fileID: 164560345}
   scoreBoard: {fileID: 1788217122}

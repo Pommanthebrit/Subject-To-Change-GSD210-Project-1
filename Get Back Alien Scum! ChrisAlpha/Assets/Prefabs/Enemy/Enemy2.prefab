@@ -91,7 +91,6 @@ MonoBehaviour:
   _playerCtrl: {fileID: 0}
   _scoreWorth: 10
   _health: 2
-  _deathSound: {fileID: 8300000, guid: 3129142bb8f12ea47a07efb883eed135, type: 3}
   deathEffect: {fileID: 1880416335207710, guid: 94e97948e11ecd14ca675f15b828edc4,
     type: 2}
   waypoints:
@@ -102,7 +101,7 @@ MonoBehaviour:
   - {fileID: 1390850166993198, guid: 06e241608fab0a446a693db9b1f87ae3, type: 2}
   num: 0
   minDist: 0.1
-  speed: 3
+  speed: 2
   rand: 1
   go: 1
 --- !u!212 &212520006191679818
