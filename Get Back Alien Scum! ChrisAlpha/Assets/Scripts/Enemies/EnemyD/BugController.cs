@@ -47,7 +47,6 @@ public class BugController : EnemyController
 
 	void Start()
 	{
-//		_hiveTransform = this.gameObject.GetComponentInParent<Transform>();
 		_rb = GetComponent<Rigidbody2D>();
 
 		StartCoroutine("TargetChanging");
