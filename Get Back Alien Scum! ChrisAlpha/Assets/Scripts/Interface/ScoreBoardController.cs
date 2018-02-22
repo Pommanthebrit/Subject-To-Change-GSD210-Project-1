@@ -15,11 +15,7 @@ public class ScoreBoardController : MonoBehaviour {
 		highScoreValues = new int[highScores.Length]; //Sets the number of array entries in highScoreValues to the same amount as the array length of highScores
 		highScoreNames = new string[highScores.Length]; //Sets the number of array entries in highScoreNames to the same amount as the array length of highScores
 		for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
-<<<<<<< HEAD
 			// EDIT
-=======
-			
->>>>>>> e7c846cf9059174b18ea80584c443e911220bd3f
 			if(PlayerPrefs.HasKey("highScoreValues" + x)) // checks if highscore key exists
 				highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
 			else

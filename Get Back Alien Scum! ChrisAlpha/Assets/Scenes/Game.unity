@@ -2012,7 +2012,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4497648760776902, guid: ee3a558da4b3d0a44924c6c6a1d61f83, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1885250520604386, guid: ee3a558da4b3d0a44924c6c6a1d61f83, type: 2}
       propertyPath: m_IsActive
@@ -3340,7 +3340,7 @@ RectTransform:
   - {fileID: 164560346}
   - {fileID: 232376663}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

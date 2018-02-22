@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour {
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
 
-	AudioSource myAudioSource; //assigns audio source
 	public AudioClip wowNewHighScore; //assigns sound clip
 
 	void Start () {
@@ -38,11 +37,9 @@ public class GameController : MonoBehaviour {
 		maxSpawnRate = 1.6f;
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
 		InvokeRepeating ("IncreaseSpawn", 14f, 10f);
-<<<<<<< HEAD
-=======
 
 		myAudioSource = GetComponent<AudioSource> ();
->>>>>>> e7c846cf9059174b18ea80584c443e911220bd3f
+
 		playerCtrl = player.GetComponent<Player>();
 	}
 	
@@ -91,16 +88,28 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() { //function for game ending
-		myAudioSource.PlayOneShot(defeatTone);
 		gameEnded = true; //sets gameEnded to true
 		Time.timeScale = 0f; //sets timescale to 0 (paused)
 		playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
 		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
-			if (myScore > finalScore){ //checks if current score > #10 high score
-				myAudioSource = GetComponent<AudioSource> (); //Gets audio source
-				myAudioSource.PlayOneShot (wowNewHighScore); //Plays "new high score" audio file
+			if (myScore > finalScore) { //checks if current score > #10 high score
+				NewHighScore();	//calls function with time delay
+			} else {
+				nameInputBox.SetActive (false);
+				submitButton.SetActive (false);
+				Defeat();
 			}
+	}
+
+	public void Defeat() { //function for playing defeat audio
+		myAudioSource = GetComponent<AudioSource> (); //Gets audio source
+		myAudioSource.PlayOneShot(defeatTone); //Plays audio file
+	}
+
+	public void NewHighScore() { //function for playing New High Score audio
+		myAudioSource = GetComponent<AudioSource> (); //Gets audio source
+		myAudioSource.PlayOneShot (wowNewHighScore); //Plays audio file
 	}
 
 	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboar (after the player has entered their name)
