@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
 	#endregion
 
 	#region Player Variables
-	public int myScore, myHealth;
+	public int myScore, myHealth,finalScore;
 	public GameObject player;
 	private Player playerCtrl;
 	#endregion
@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour {
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
 
+	AudioSource myAudioSource; //assigns audio source
+	public AudioClip wowNewHighScore; //assigns sound clip
+
 	void Start () {
 		gameEnded = false;
 		paused = false;
@@ -33,7 +36,6 @@ public class GameController : MonoBehaviour {
 		maxSpawnRate = 1.8f;
 		InvokeRepeating ("SpawnEnemy", 4f, Random.Range(minSpawnRate, maxSpawnRate));
 		InvokeRepeating ("IncreaseSpawn", 14f, 10f);
-
 		playerCtrl = player.GetComponent<Player>();
 	}
 	
@@ -86,9 +88,14 @@ public class GameController : MonoBehaviour {
 		Time.timeScale = 0f; //sets timescale to 0 (paused)
 		playerCtrl.GetComponent<Shoot>().enabled = false; //disables shoot script
 		scoreBoard.SetActive (true); //Enables the scoreboard game object
+		finalScore = PlayerPrefs.GetInt ("highScoreValues" + 9); //Gets #10 high score
+			if (myScore > finalScore){ //checks if current score > #10 high score
+				myAudioSource = GetComponent<AudioSource> (); //Gets audio source
+				myAudioSource.PlayOneShot (wowNewHighScore); //Plays "new high score" audio file
+			}
 	}
 
-	public void Scoreboard(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboar (after the player has entered their name)
+	public void SubmitScore(){ //function for entering name on scoreboard. This function will be called by clicking the "Submit" button on the scoreboar (after the player has entered their name)
 		GetComponent<ScoreBoardController> ().CheckForHighScore (myScore, playerName.text); //calls CheckForHighScore function from ScoreboardController script
 		nameInputBox.SetActive (false); //Disables name input box
 		submitButton.SetActive (false); //Disables submit button

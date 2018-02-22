@@ -1149,7 +1149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcb9c5f217e23b449768a908ff384c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameController: {fileID: 2095516598}
 --- !u!4 &603107042
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,7 +2565,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2095516599}
-        m_MethodName: Scoreboard
+        m_MethodName: SubmitScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4399,6 +4398,7 @@ MonoBehaviour:
   - {fileID: 1888260620742042, guid: 0902f7bc5684f0f499038962199b6876, type: 2}
   myScore: 0
   myHealth: 4
+  finalScore: 0
   player: {fileID: 2027553246}
   gameTimer: 0
   scoreHUD: {fileID: 1291071199}
@@ -4409,6 +4409,7 @@ MonoBehaviour:
   quitToMenuButton: {fileID: 1346645018}
   pauseMenu: {fileID: 1259806085}
   playerName: {fileID: 1358951349}
+  wowNewHighScore: {fileID: 8300000, guid: a1bbd0e267cc58b4bb643dc04fdb110e, type: 3}
 --- !u!4 &2095516600
 Transform:
   m_ObjectHideFlags: 0
@@ -4444,7 +4445,6 @@ MonoBehaviour:
   - {fileID: 1797330639}
   - {fileID: 1850339851}
   - {fileID: 1891253516}
-  wowNewHighScore: {fileID: 8300000, guid: a1bbd0e267cc58b4bb643dc04fdb110e, type: 3}
 --- !u!82 &2095516602
 AudioSource:
   m_ObjectHideFlags: 0
