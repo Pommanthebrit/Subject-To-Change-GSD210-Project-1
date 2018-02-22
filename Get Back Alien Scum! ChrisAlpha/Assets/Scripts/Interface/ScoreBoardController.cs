@@ -20,7 +20,6 @@ public class ScoreBoardController : MonoBehaviour {
 
 		for (int x = 0; x < highScores.Length; x++) { //runs this loop for each score in the highScores array
 			
-			// EDIT
 			if(PlayerPrefs.HasKey("highScoreValues" + x)) // checks if highscore key exists
 				highScoreValues[x] = PlayerPrefs.GetInt ("highScoreValues" + x); //each time the loop runs, gets one of the highScoreValues from PlayerPrefs
 			else
@@ -30,7 +29,6 @@ public class ScoreBoardController : MonoBehaviour {
 				highScoreNames[x] = PlayerPrefs.GetString ("highScoreNames" + x); //each time the loop runs, gets one of the highScoreNames from PlayerPrefs
 			else
 				PlayerPrefs.SetString("highScoreNames" + x, "N/A"); // if no highscore exists create one
-			// END OF EDIT
 		}
 		DrawScores (); //calls function DrawScores
 	}

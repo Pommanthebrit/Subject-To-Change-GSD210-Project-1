@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour {
 		{
 			if (collider.gameObject.tag == "Bullet")
 			{
-				print("collision");
+				//print("collision");
 				DamageSelf();
 			}
 		}
