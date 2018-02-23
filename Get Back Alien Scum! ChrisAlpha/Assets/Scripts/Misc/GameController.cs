@@ -18,10 +18,9 @@ public class GameController : MonoBehaviour {
 
 	#region Scoring
 	bool paused, gameEnded;
-	public float gameTimer;
 	AudioSource myAudioSource;
 	public AudioClip defeatTone;
-	public GameObject scoreHUD, timerHUD, scoreBoard, nameInputBox, submitButton, quitToMenuButton, pauseMenu; //UI objects that can be enabled or disabled as required
+	public GameObject scoreHUD, scoreBoard, nameInputBox, submitButton, quitToMenuButton, pauseMenu; //UI objects that can be enabled or disabled as required
 	public InputField playerName; //Player name input on scoreboard
 	#endregion
 
@@ -57,12 +56,8 @@ public class GameController : MonoBehaviour {
 			GameOver ();
 		}
 
-		//Score and timer displays on HUD
-		gameTimer += Time.deltaTime;
-
-		//scoreHUD.GetComponent<Text> ().text = myScore.ToString ();
+		//Score display on HUD
 		scoreHUD.GetComponent<Text> ().text = ("Score: " + myScore.ToString ());
-		timerHUD.GetComponent<Text> ().text = gameTimer.ToString ("##");
 	}
 
 	void SpawnEnemy () {

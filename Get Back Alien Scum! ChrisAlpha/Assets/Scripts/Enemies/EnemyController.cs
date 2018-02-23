@@ -27,6 +27,20 @@ public class EnemyController : MonoBehaviour {
 		{
 			DamagePlayer ();
 		}
+
+		// Destroys if bugs wander off left side of screen
+		Vector2 xMinMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		if(transform.position.x < xMinMoveLimit.x) 
+		{
+			Destroy(gameObject);
+		}
+
+		// Destroys if bugs wander off right side of screen
+		Vector2 xMaxMoveLimit = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
+		if(transform.position.x > xMaxMoveLimit.x) 
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	//Destroys enemy if shot by player bullet, increases score
